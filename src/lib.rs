@@ -1,6 +1,6 @@
 #![feature(fn_traits, unboxed_closures)]
 
-//! Explain how closure works and provide a clear closure implementation with macro.
+//! Explain how closures work and provide a clear closure implementation with macro.
 //!
 //! # Example:
 //! ```
