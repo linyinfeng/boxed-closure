@@ -1,5 +1,5 @@
 [package]
-name = "closure"
+name = "boxed-closure"
 version = "0.0.1"
 authors = ["Lin Yinfeng <lin.yinfeng@outlook.com>"]
 
