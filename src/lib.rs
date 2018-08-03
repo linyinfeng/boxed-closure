@@ -40,23 +40,23 @@ pub use ref_mut_closure::RefMutClosure;
         fn f(($($env_name,)*): ($($env_type,)*), ($($arg_name,)*): ($($arg_type,)*)) $body
         $crate::MoveClosure::new(($($env_exp,)*), f)
     });
-    (ref mut [$($env_name:ident: $env_type:ty = $env_exp:expr),*,]
-        ($($arg_name:ident: $arg_type:ty),*,) -> $out:ty $body:block) => ({
+    (ref mut [$($env_name:ident: $env_type:ty = $env_exp:expr,)*]
+        ($($arg_name:ident: $arg_type:ty,)*) -> $out:ty $body:block) => ({
         fn f(($($env_name,)*): &mut ($($env_type,)*), ($($arg_name,)*): ($($arg_type,)*)) -> $out $body
         $crate::RefMutClosure::new(($($env_exp,)*), f)
     });
-    (ref mut [$($env_name:ident: $env_type:ty = $env_exp:expr),*,]
-        ($($arg_name:ident: $arg_type:ty),*,) $body:block) => ({
+    (ref mut [$($env_name:ident: $env_type:ty = $env_exp:expr,)*]
+        ($($arg_name:ident: $arg_type:ty,)*) $body:block) => ({
         fn f(($($env_name,)*): &mut ($($env_type,)*), ($($arg_name,)*): ($($arg_type,)*)) $body
         $crate::RefMutClosure::new(($($env_exp,)*), f)
     });
-    (ref [$($env_name:ident: $env_type:ty = $env_exp:expr),*,]
-        ($($arg_name:ident: $arg_type:ty),*,) -> $out:ty $body:block) => ({
+    (ref [$($env_name:ident: $env_type:ty = $env_exp:expr,)*]
+        ($($arg_name:ident: $arg_type:ty,)*) -> $out:ty $body:block) => ({
         fn f(($($env_name,)*): &($($env_type,)*), ($($arg_name,)*): ($($arg_type,)*)) -> $out $body
         $crate::RefClosure::new(($($env_exp,)*), f)
     });
-    (ref [$($env_name:ident: $env_type:ty = $env_exp:expr),*,]
-        ($($arg_name:ident: $arg_type:ty),*,) $body:block) => ({
+    (ref [$($env_name:ident: $env_type:ty = $env_exp:expr,)*]
+        ($($arg_name:ident: $arg_type:ty,)*) $body:block) => ({
         fn f(($($env_name,)*): &($($env_type,)*), ($($arg_name,)*): ($($arg_type,)*)) $body
         $crate::RefClosure::new(($($env_exp,)*), f)
     });
